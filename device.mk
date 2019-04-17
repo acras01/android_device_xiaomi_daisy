@@ -262,6 +262,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# Fingerprint feature
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sm6150
+
 # FM
 PRODUCT_PACKAGES += \
     FM2 \
