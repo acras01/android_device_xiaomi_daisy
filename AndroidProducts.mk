@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_sakura.mk
+    $(LOCAL_DIR)/lineage_daisy.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_sakura-user \
-    aosp_sakura-userdebug \
-    aosp_sakura-eng
+    lineage_daisy-user \
+    lineage_daisy-userdebug \
+    lineage_daisy-eng
