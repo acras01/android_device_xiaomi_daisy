@@ -302,7 +302,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Perf
--include vendor/qcom/common/qti-vendor.mk
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
 
 # Pre-opt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
