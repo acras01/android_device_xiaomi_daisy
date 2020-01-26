@@ -1,0 +1,2 @@
+allow sensors sysfs:dir { open read };
+allow sensors sysfs:file { open read };
