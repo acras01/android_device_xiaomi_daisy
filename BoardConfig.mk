@@ -49,7 +49,7 @@ BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sakura
+TARGET_KERNEL_SOURCE := kernel/xiaomi/daisy
 TARGET_KERNEL_VERSION := 4.9
 
 # ANT
