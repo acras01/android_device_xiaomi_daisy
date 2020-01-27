@@ -42,9 +42,10 @@
          Zone N  1     array[N] <= LUX < infinity
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>1</item>
+        <item>2</item>
         <item>3</item>
         <item>4</item>
-        <item>6</item>
         <item>8</item>
         <item>12</item>
         <item>20</item>
@@ -73,24 +74,31 @@
          array. The brightness values must be non-negative and non-decreasing. This must be
          overridden in platform specific overlays -->
     <array name="config_autoBrightnessDisplayValuesNits">
-        <item>10.9800</item>  <!-- 0-3 -->
-        <item>13.2500</item>  <!-- 3-4 -->
-        <item>38.786167</item>  <!-- 4-6 -->
-        <item>43.30993</item>  <!-- 6-8 -->
-        <item>55.90478</item>  <!-- 8-12 -->
-        <item>61.334614</item>  <!-- 12-20 -->
-        <item>68.4388</item>  <!-- 20-33 -->
-        <item>75.59099</item>  <!-- 33-55 -->
-        <item>82.8686</item>  <!-- 55-90 -->
-        <item>91.49397</item>  <!-- 90-148 -->
-        <item>102.49851</item>  <!-- 148-245 -->
-        <item>118.8174</item>  <!-- 245-403 -->
-        <item>144.68486</item>  <!-- 403-665 -->
-        <item>180.69225</item>  <!-- 665-1097 -->
-        <item>225.84135</item>  <!-- 1097-1808 -->
-        <item>292.46844</item>  <!-- 1808-2981 -->
-        <item>377.05084</item>  <!-- 2981-5000 -->
-        <item>481.93427</item>  <!-- 5000+ -->
+        <item>7.702998</item>
+        <item>32.31226</item>
+        <item>38.786167</item>
+        <item>43.30993</item>
+        <item>46.851162</item>
+        <item>55.90478</item>
+        <item>61.334614</item>
+        <item>68.4388</item>
+        <item>75.59099</item>
+        <item>82.8686</item>
+        <item>91.49397</item>
+        <item>102.49851</item>
+        <item>118.8174</item>
+        <item>144.68486</item>
+        <item>180.69225</item>
+        <item>225.84135</item>
+        <item>292.46844</item>
+        <item>377.05084</item>
+        <item>481.93427</item>
+    </array>
+	
+    <array name="config_minimumBrightnessCurveNits">
+        <item>0.0</item>
+        <item>50.0</item>
+        <item>90.0</item>
     </array>
 
     <!-- An array describing the screen's backlight values corresponding to the brightness
@@ -241,6 +249,32 @@
         <item>467.6</item>
         <item>478.5</item>
     </array>
+	
+	<bool name="config_supportAudioSourceUnprocessed">false</bool>
+
+    <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
+
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">200.0%</fraction>
+
+    <fraction name="config_maximumScreenDimRatio">29.999996%</fraction>
+
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
+
+    <integer name="config_screenBrightnessDark">1</integer>
+
+    <integer name="config_screenBrightnessDim">1</integer>
+
+    <integer name="config_screenBrightnessSettingDefault">102</integer>
+
+    <integer name="config_screenBrightnessSettingMaximum">255</integer>
+
+    <integer name="config_bluetooth_idle_cur_ma">1</integer>
+
+    <integer name="config_bluetooth_rx_cur_ma">2</integer>
+
+    <integer name="config_bluetooth_tx_cur_ma">3</integer>
+
+    <integer name="config_shutdownBatteryTemperature">600</integer>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -581,29 +615,8 @@
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
 
-    <!-- The bounding path of the cutout region of the main built-in display.
-         Must either be empty if there is no cutout region, or a string that is parsable by
-         {@link android.util.PathParser}.
-         The path is assumed to be specified in display coordinates with pixel units and in
-         the display's native orientation, with the origin of the coordinate system at the
-         center top of the display.
-         To facilitate writing device-independent emulation overlays, the marker `@dp` can be
-         appended after the path string to interpret coordinates in dp instead of px units.
-         Note that a physical cutout should be configured in pixels for the best results.
-         Example for a 10px x 10px square top-center cutout:
-                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z</string>
-         Example for a 10dp x 10dp square top-center cutout:
-                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
-         @see https://www.w3.org/TR/SVG/paths.html#PathData
-         -->
-    <string translatable="false" name="config_mainBuiltInDisplayCutout">M -186,0 L -186,94 L 186,94 L 186,0 Z</string>
-
     <!-- Whether device has screen with higher aspect ratio -->
     <bool name="config_haveHigherAspectRatioScreen">true</bool>
-
-    <!-- Height of the status bar -->
-    <dimen name="status_bar_height_portrait">94.0px</dimen>
-    <dimen name="status_bar_height_landscape">24.0dp</dimen>
 
    <!-- Component name for default assistant on this device -->
    <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
