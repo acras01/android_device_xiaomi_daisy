@@ -1,0 +1,2 @@
+on post-fs
+	exec - root -- /system/bin/cts_pass.sh

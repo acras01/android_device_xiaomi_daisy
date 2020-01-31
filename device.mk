@@ -366,9 +366,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 	
-#Resetprop
+#Resetprop (thx to phhusson)
 PRODUCT_PACKAGES += \
-    resetprop
+    resetprop \
+	cts_pass.sh
+	
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/cts_pass.rc:system/etc/init/cts_pass.rc
 	
 # RIL
 PRODUCT_PACKAGES += \
