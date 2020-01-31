@@ -365,7 +365,11 @@ PRODUCT_PACKAGES += \
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
-
+	
+#Resetprop
+PRODUCT_PACKAGES += \
+    resetprop
+	
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.2 \
