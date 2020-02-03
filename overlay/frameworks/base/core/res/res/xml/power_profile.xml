@@ -15,29 +15,21 @@
     <item name="radio.active">134.84</item>
     <item name="radio.scanning">10</item>
     <array name="cpu.speeds">
-        <value>518400</value>
         <value>652800</value>
-        <value>844800</value>
         <value>1036800</value>
-        <value>1248000</value>
         <value>1401600</value>
         <value>1689600</value>
         <value>1804800</value>
+        <value>1958000</value>
         <value>2016000</value>
-        <value>2208000</value>
-        <value>2400000</value>
     </array>
     <array name="cpu.active">
-        <value>143</value>
         <value>151</value>
         <value>169</value>
         <value>177</value>
-        <value>188</value>
         <value>195</value>
-        <value>225</value>
         <value>259</value>
         <value>307</value>
-        <value>337</value>
         <value>353</value>
     </array>
     <item name="cpu.awake">1.6</item>
