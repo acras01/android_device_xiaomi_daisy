@@ -4,7 +4,13 @@
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
 dalvik.vm.dex2oat-filter=speed \
-dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.image-dex2oat-filter=speed \
+dalvik.vm.heapstartsize=16m \
+dalvik.vm.heapgrowthlimit=256m \
+dalvik.vm.heapsize=512m \
+dalvik.vm.heaptargetutilization=0.75 \
+dalvik.vm.heapminfree=4m \
+dalvik.vm.heapmaxfree=8m \
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -74,12 +80,6 @@ persist.vendor.camera.display.lmax=1280x720 \
 persist.vendor.camera.display.umax=1920x1080 \
 camera.lowpower.record.enable=1 \
 media.camera.ts.monotonic=1 \
-dalvik.vm.heapstartsize=16m \
-dalvik.vm.heapgrowthlimit=256m \
-dalvik.vm.heapsize=512m \
-dalvik.vm.heaptargetutilization=0.75 \
-dalvik.vm.heapminfree=4m \
-dalvik.vm.heapmaxfree=8m \
 persist.camera.CDS=off \
 persist.camera.video.CDS=off \
 persist.camera.eis.enable=1 \
@@ -93,8 +93,7 @@ persist.camera.HAL3.enabled=1 \
 vendor.camera.lowpower.record.enable=1 \
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.huaqin.factory,org.lineageos.snap \
 vendor.camera.aux.packagelist2=com.android.systemui,com.huaqin.cameraautotest,com.huaqin.runtime \
-vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.huaqin.factory,com.mi.AutoTest
+vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,com.android.camera2 \
 
 # Cne
 PRODUCT_PROPERTY_OVERRIDES += \
