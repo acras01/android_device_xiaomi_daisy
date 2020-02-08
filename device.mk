@@ -202,13 +202,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
-    qcom.fmradio
+    qcom.fmradio \
+	qcom.fmradio.xml
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/permissions/com.qcom.fmradio.xml:system/etc/permissions/com.qcom.fmradio.xml
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -366,7 +364,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 	
-#Resetprop (thx to phhusson)
+# Resetprop (thx to phhusson)
 PRODUCT_PACKAGES += \
     resetprop \
 	cts_pass.sh
