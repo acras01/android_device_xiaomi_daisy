@@ -24,5 +24,6 @@
     <bool name="config_wifi_support_connected_mac_randomization">true</bool>
 
     <!-- Device specific doze package -->
-    <string name="config_customDozePackage">org.lineageos.settings/org.lineageos.settings.doze.DozeSettingsActivity</string>
+    <string name="config_customDozePackage">me.phh.treble.app/me.phh.treble.app.SettingsActivity</string>
+
 </resources>

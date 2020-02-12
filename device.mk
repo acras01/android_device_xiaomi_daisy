@@ -183,7 +183,11 @@ PRODUCT_PACKAGES += \
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
+    phh_Doze \
     XiaomiParts
+	
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/me.phh.treble.app.xml:system/etc/permissions/me.phh.treble.app.xml
 
 # DRM
 PRODUCT_PACKAGES += \
