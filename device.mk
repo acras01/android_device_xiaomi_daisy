@@ -247,8 +247,8 @@ PRODUCT_PACKAGES += \
     ims_ext_common.xml
 	
 # init.d support
-PRODUCT_PACKAGES += \
-    sysinit
+#PRODUCT_PACKAGES += \
+#    sysinit
 
 # Input
 PRODUCT_COPY_FILES += \
