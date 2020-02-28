@@ -151,7 +151,8 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+    android.hardware.camera.provider@2.4-service \
+	Snap
 
 # Consumerir
 PRODUCT_PACKAGES += \
@@ -325,8 +326,7 @@ PRODUCT_BOOT_JARS += \
 
 # Pre-opt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI \
-    NexusLauncherRelease
+    SystemUI
 
 # Power
 PRODUCT_PACKAGES += \

@@ -166,8 +166,8 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 TARGET_PROVIDES_LIBPLATFORMCONFIG := true
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_sakura
-TARGET_RECOVERY_DEVICE_MODULES := libinit_sakura
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_daisy
+TARGET_RECOVERY_DEVICE_MODULES := libinit_daisy
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -241,7 +241,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/daisy/BoardConfigVendor.mk
--include vendor/xiaomi/msm8953-common/BoardConfigVendor.mk
 
 # OTA Assert
 TARGET_OTA_ASSERT_DEVICE := daisy
