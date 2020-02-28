@@ -33,8 +33,6 @@ PRODUCT_MODEL := Mi A2 Lite
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="daisy" \
     PRODUCT_NAME="daisy_sprout" \
@@ -57,3 +55,5 @@ ifeq ($(CURRENT_BUILD_TYPE), gapps)
   TARGET_GAPPS_ARCH := arm64
   IS_PHONE := true
 endif
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
