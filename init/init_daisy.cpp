@@ -59,5 +59,5 @@ void vendor_load_properties()
 {
     // fingerprint
     property_override("ro.build.description", "daisy-user 9 PKQ1.180917.001 V10.0.18.0.PDLMIXM release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:10/QQ1D.200205.002/6084393:user/release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "xiaomi/daisy/daisy_sprout:9/PKQ1.180917.001/V10.0.18.0.PDLMIXM:user/release-keys");
 }
