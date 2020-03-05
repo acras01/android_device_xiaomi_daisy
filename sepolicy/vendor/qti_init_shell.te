@@ -7,7 +7,7 @@ allow qti_init_shell sysfs_devices_system_cpu:dir write;
 allow qti_init_shell sysfs_lowmemorykiller:dir write;
 
 allow qti_init_shell sysfs:dir setattr;
-allow qti_init_shell sysfs:file setattr;
+allow qti_init_shell sysfs:file { setattr write };
 
 allow qti_init_shell sysfs_devfreq:dir setattr;
 allow qti_init_shell sysfs_ssr:file setattr;
