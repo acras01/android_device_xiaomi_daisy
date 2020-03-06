@@ -35,7 +35,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res \
-	SystemUI
+    SystemUI
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -127,9 +127,9 @@ PRODUCT_PACKAGES += \
 
 # A2DP
 PRODUCT_PACKAGES += \
-  audio.a2dp.default \
-  android.hardware.bluetooth.a2dp@1.0-impl \
-  android.hardware.bluetooth.a2dp@1.0-service
+    audio.a2dp.default \
+    android.hardware.bluetooth.a2dp@1.0-impl \
+    android.hardware.bluetooth.a2dp@1.0-service
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -155,7 +155,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-	Snap
+    Snap
 
 # Consumerir
 PRODUCT_PACKAGES += \
@@ -211,7 +211,7 @@ PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio \
-	qcom.fmradio.xml
+    qcom.fmradio.xml
 
 PRODUCT_BOOT_JARS += \
     qcom.fmradio
