@@ -47,3 +47,4 @@ allow priv_app firmware_file:file { open };
 allow priv_app sysfs_android_usb:file open;
 allow priv_app mnt_vendor_file:dir search;
 allow priv_app sysfs_kgsl:file { open read };
+allow priv_app vendor_file:file { getattr open read };
