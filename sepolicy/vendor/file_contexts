@@ -1,5 +1,5 @@
 # Audio
-/data/vendor/misc/audio(/.*)?                   u:object_r:vendor_audio_data_file:s0
+#/data/vendor/misc/audio(/.*)?                   u:object_r:vendor_audio_data_file:s0
 
 # Avb
 /avb(/.*)?               u:object_r:avb_file:s0
