@@ -137,7 +137,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0 \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth.a2dp@1.0-impl \
-    android.hardware.bluetooth.a2dp@1.0-service
+    android.hardware.bluetooth.a2dp@1.0-service \
+    vendor.qti.hardware.bluetooth_audio@2.0 \
+    vendor.qti.hardware.bluetooth_dun@1.0
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
@@ -168,6 +170,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.5 \
+    vendor.qti.hardware.camera.device@1.0 \
+    vendor.qti.hardware.camera.postproc@1.0 \
     Snap
 
 # Consumerir
