@@ -2,3 +2,5 @@ allow mediaprovider bootloader_boot_reason_prop:file read;
 allow mediaprovider runtime_event_log_tags_file:file read;
 allow mediaprovider bluetooth_prop:file read;
 allow mediaprovider boottime_prop:file read;
+allow mediaprovider hal_perf_hwservice:hwservice_manager find;
+allow mediaprovider hal_perf_default:binder call;
