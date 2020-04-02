@@ -224,6 +224,10 @@ ro.vendor.gt_library=libqti-gt.so \
 ro.vendor.at_library=libqti-at.so \
 persist.vendor.qti.games.gt.prof=1
 
+# Netflix
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.netflix.bsp_rev=Q660-13149-1
+
 # Netmgrd
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.use_data_netmgrd=true \
