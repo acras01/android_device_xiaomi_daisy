@@ -36,3 +36,4 @@ allow untrusted_app persist_camera_prop:file { getattr open read };
 allow untrusted_app sysfs_kgsl:dir search;
 allow untrusted_app sysfs_kgsl:file { open read };
 allow untrusted_app camera_prop:file { getattr open read };
+allow untrusted_app persist_camera_prop:file { getattr open };

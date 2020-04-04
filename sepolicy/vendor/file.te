@@ -29,3 +29,11 @@ type debugfs_rmt, debugfs_type, fs_type;
 
 # Touchscreen
 type proc_touchpanel, fs_type, sysfs_type, proc_type;
+
+# Power
+type sysfs_msm_subsys, sysfs_type, fs_type;
+type debugfs_rpm, debugfs_type, fs_type;
+type sysfs_power_stats, sysfs_type, fs_type;
+type proc_sched_energy_aware, proc_type, fs_type;
+type debugfs_wlan, debugfs_type, fs_type;
+type debugfs_sched_features, debugfs_type, fs_type;

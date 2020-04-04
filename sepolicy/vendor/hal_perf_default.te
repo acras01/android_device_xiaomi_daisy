@@ -1,1 +1,2 @@
 allow hal_perf_default sysfs:dir { open read };
+allow hal_perf_default self:capability { dac_override };
