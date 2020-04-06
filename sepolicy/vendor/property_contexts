@@ -41,3 +41,7 @@ sys.thermal.                                                  u:object_r:thermal
 
 # Dirac
 persist.audio.dirac.                                          u:object_r:dirac_prop:s0
+
+# Wcnss
+vendor.wlan.driver.ath          u:object_r:wifi_prop:s0
+vendor.wlan.driver.config       u:object_r:wifi_prop:s0
