@@ -32,10 +32,20 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi A2 Lite
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
+	
+TARGET_VENDOR_PRODUCT_NAME := daisy
+TARGET_VENDOR_DEVICE_NAME := daisy
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="daisy" \
-    PRODUCT_NAME="daisy_sprout"
+    PRODUCT_NAME="daisy"
+
+# Build Fingerprint
+#PRODUCT_BUILD_PROP_OVERRIDES += \
+#    PRIVATE_BUILD_DESC="coral-user 10 QQ2A.200405.005 6254899 release-keys"
+
+#Build FP to be picked by both system and vendor
+#BUILD_FINGERPRINT := "google/coral/coral:10/QQ2A.200405.005/6254899:user/release-keys"
 
 # Use Gcam and Jelly
 TARGET_USE_GCAM := false
