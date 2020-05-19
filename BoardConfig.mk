@@ -182,6 +182,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware \
     /mnt/vendor/persist:/persist
+
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
