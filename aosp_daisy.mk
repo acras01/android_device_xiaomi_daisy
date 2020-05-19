@@ -60,7 +60,7 @@ ifeq ($(CURRENT_BUILD_TYPE), gapps)
   WITH_GAPPS := true
   TARGET_GAPPS_ARCH := arm64
   IS_PHONE := true
-  TARGET_INCLUDE_WIFI_EXT := true
+  #TARGET_INCLUDE_WIFI_EXT := true
 endif
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
