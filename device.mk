@@ -291,10 +291,6 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
 	
-# init.d support
-#PRODUCT_PACKAGES += \
-#    sysinit
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/ft5435_ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ft5435_ts.kl \
@@ -408,14 +404,6 @@ PRODUCT_PACKAGES += \
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
-	
-# Resetprop (thx to phhusson)
-#PRODUCT_PACKAGES += \
-#    resetprop \
-#	cts_pass.sh
-
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/cts_pass.rc:system/etc/init/cts_pass.rc
 	
 # RIL
 PRODUCT_PACKAGES += \
