@@ -23,6 +23,10 @@ ifeq ($(CURRENT_BUILD_TYPE),gapps)
     $(call inherit-product, vendor/google-customization/config.mk)
 endif
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    device/xiaomi/daisy
+
 # Set boot SPL
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
@@ -110,8 +114,22 @@ PRODUCT_PACKAGES += \
 
 # Boot control
 PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+    bootctrl.msm8953 \
     android.hardware.boot@1.0-impl.recovery \
     bootctrl.msm8953.recovery
+
+# Boot control debug
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
+
+# Update engine
+PRODUCT_PACKAGES += \
+    update_engine \
+    update_engine_sideload \
+    update_verifier \
+    update_engine_client
 
 # Audio
 PRODUCT_PACKAGES += \

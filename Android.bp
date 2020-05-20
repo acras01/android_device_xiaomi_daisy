@@ -1,4 +1,6 @@
 subdirs = [
-    "light",
-    "usb",
+    "*",
 ]
+soong_namespace {
+    imports: ["hardware/qcom/bootctrl"],
+}
