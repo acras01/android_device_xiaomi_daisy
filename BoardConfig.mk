@@ -190,7 +190,7 @@ TARGET_PER_MGR_ENABLED := true
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/wakeup_gesture"
 
 # SurfaceFlinger
-TARGET_USE_AOSP_SURFACEFLINGER := true
+#TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
