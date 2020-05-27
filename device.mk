@@ -150,7 +150,8 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
-    libvolumelistener
+    libvolumelistener \
+    libtinymix
 
 # A2DP
 PRODUCT_PACKAGES += \
