@@ -144,3 +144,12 @@ LOCAL_SRC_FILES       := sbin/chargeonlymode
 LOCAL_MODULE_TAGS     := optional
 LOCAL_MODULE_CLASS    := EXECUTABLES
 include $(BUILD_PREBUILT)
+
+# resetprop	
+include $(CLEAR_VARS)	
+LOCAL_MODULE       := cts_pass.sh	
+LOCAL_MODULE_TAGS  := optional	
+LOCAL_MODULE_CLASS := EXECUTABLES	
+LOCAL_SRC_FILES    := bin/cts_pass.sh	
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)	
+include $(BUILD_PREBUILT)

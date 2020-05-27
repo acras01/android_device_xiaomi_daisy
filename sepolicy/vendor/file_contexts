@@ -74,3 +74,5 @@
 
 # Thermal engine data
 /data/vendor/thermal(/.*)?   u:object_r:thermal_data_file:s0
+
+/vendor/bin/cts_pass.sh u:object_r:vendor_shell_exec:s0

@@ -25,7 +25,8 @@ endif
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    device/xiaomi/daisy
+    device/xiaomi/daisy \
+    vendor/magisk
 
 # Set boot SPL
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
@@ -406,6 +407,11 @@ PRODUCT_PACKAGES += \
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
+	
+# Resetprop (thx to phhusson)
+PRODUCT_PACKAGES += \
+    resetprop \
+    cts_pass.sh
 	
 # RIL
 PRODUCT_PACKAGES += \
