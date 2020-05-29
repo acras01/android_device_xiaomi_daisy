@@ -242,7 +242,7 @@ on boot
     chown system system /sys/class/kgsl/kgsl-3d0/idle_timer
     chown system system /sys/class/devfreq/soc:qcom,gpubw/min_freq
     chown system system /sys/devices/soc/soc:qcom,cpubw/devfreq/soc:qcom,cpubw/min_freq
-	
+
 on boot
     # DT2W Node
     chown system system /proc/touchpanel/wakeup_gesture
@@ -258,7 +258,3 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
-	
-#CTS Pass
-on post-fs
-	exec - root -- /vendor/bin/cts_pass.sh
