@@ -127,7 +127,6 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # Display
-TARGET_USES_IOPHAL := true
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_GRALLOC1 := true
