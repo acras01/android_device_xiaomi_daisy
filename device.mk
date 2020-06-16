@@ -405,7 +405,13 @@ PRODUCT_PACKAGES += \
     init.daisy.rc \
     move_time_data.sh \
     move_wifi_data.sh \
+<<<<<<< HEAD
     ueventd.qcom.rc
+=======
+    ueventd.qcom.rc \
+    init.gpuboost.rc \
+    init.gpuboost.sh
+>>>>>>> c2ac9b25f... daisy: XiaomiParts: Add GPU Boost Controler
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
