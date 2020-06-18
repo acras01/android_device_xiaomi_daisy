@@ -216,7 +216,8 @@ vendor.video.disable.ubwc=1
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.sys.fw.dex2oat_thread_count=8 \
 ro.vendor.extension_library=libqti-perfd-client.so \
-ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.sys.fw.bservice_enable=true \
+vendor.debug.trace.perf=1
 
 # Qualcomm
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
