@@ -61,7 +61,10 @@ vendor.qcom.bluetooth.soc=smd \
 ro.bluetooth.hfp.ver=1.7 \
 persist.vendor.bt.aac_frm_ctl.enabled=true \
 ro.qualcomm.bt.hci_transport=smd \
-persist.vendor.btstack.enable.splita2dp=false
+persist.vendor.btstack.enable.splita2dp=false \
+persist.bt.enableAptXHD=true \
+persist.service.btui.use_aptx=1 \
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-ldac
 
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
