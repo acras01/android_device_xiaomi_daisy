@@ -162,8 +162,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.bluetooth.a2dp@1.0-service \
     vendor.qti.hardware.bluetooth_audio@2.0 \
-    vendor.qti.hardware.bluetooth_dun@1.0 \
-    libldacBT_dec
+    vendor.qti.hardware.bluetooth_dun@1.0
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
