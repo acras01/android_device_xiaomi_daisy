@@ -1,0 +1,2 @@
+allow dpmd ctl_stop_prop:property_service set;
+allow dpmd same_process_hal_file:file  { execute getattr open read };

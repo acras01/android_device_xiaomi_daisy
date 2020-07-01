@@ -1,10 +1,8 @@
 allow qti_init_shell proc_touchpanel:dir { r_dir_perms setattr };
 allow qti_init_shell proc_touchpanel:file { getattr setattr };
-allow qti_init_shell bluetooth_data_file:file r_file_perms;
+allow qti_init_shell bluetooth_data_file:file { getattr read write };
 allow qti_init_shell ctl_default_prop:property_service set;
 allow qti_init_shell ctl_start_prop:property_service set;
-allow qti_init_shell sysfs_devices_system_cpu:dir write;
-allow qti_init_shell sysfs_lowmemorykiller:dir write;
 
 allow qti_init_shell sysfs:dir setattr;
 allow qti_init_shell sysfs:file { setattr write };
@@ -14,13 +12,13 @@ allow qti_init_shell sysfs_ssr:file setattr;
 
 allow qti_init_shell mnt_vendor_file:dir rmdir;
 
-allow qti_init_shell self:capability { dac_override kill };
+allow qti_init_shell self:capability kill;
 
 allow qti_init_shell sysfs_leds:dir setattr;
 allow qti_init_shell sysfs_leds:file setattr;
 
-allow qti_init_shell system_data_file:dir { getattr read write open remove_name rmdir };
-allow qti_init_shell system_data_file:file { getattr unlink };
+allow qti_init_shell system_data_file:dir getattr;
+allow qti_init_shell system_data_file:file getattr;
 
 allow qti_init_shell fpc_sysfs:dir setattr;
 allow qti_init_shell fpc_sysfs:file setattr;
@@ -39,3 +37,7 @@ allow qti_init_shell proc_boot_reason:file { getattr open read };
 #allow configuring slub debug options
 allow qti_init_shell sysfs_slab_zshandle_storeuser:file w_file_perms;
 allow qti_init_shell sysfs_slab_zspage_storeuser:file w_file_perms;
+
+#For configfs permission
+allow qti_init_shell configfs:dir rw_dir_perms;
+allow qti_init_shell configfs:file { rw_file_perms create };

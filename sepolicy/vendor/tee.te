@@ -1,14 +1,10 @@
 # /data/goodix labeling
 type_transition tee system_data_file:{ dir file } gx_fpd_data_file;
 
-allow tee gx_fpd_data_file:dir create_dir_perms;
-allow tee gx_fpd_data_file:file create_file_perms;
-allow tee system_data_file:dir create_dir_perms;
-allow tee fingerprintd_data_file:dir create_dir_perms;
-allow tee fingerprintd_data_file:file create_file_perms;
+allow tee gx_fpd_data_file:file { getattr read write };
+allow tee fingerprintd_data_file:file { getattr read write };
 
 # Set the sys.listeners.registered property
 set_prop(tee, system_prop)
 
-allow tee block_device:blk_file { getattr open read write };
-allow tee system_file:file { execute getattr open read };
+allow tee same_process_hal_file:file { execute getattr open read };

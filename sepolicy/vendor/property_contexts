@@ -15,12 +15,20 @@ sys.fp.vendor					u:object_r:fingerprint_prop:s0
 
 # Mlipay
 persist.vendor.sys.pay.ifaa                                   u:object_r:ifaa_prop:s0
+persist.sys.ifaa                    u:object_r:ifaa_prop:s0
+persist.vendor.sys.pay.		    u:object_r:ifaa_prop:s0
 
 # Netmgrd
 persist.net.doxlat                                            u:object_r:vendor_xlat_prop:s0
 
 # Post Boot
 sys.post_boot.parsed                                          u:object_r:vendor_mpctl_prop:s0
+
+# Power HAL
+vendor.powerhal.audio                   u:object_r:power_prop:s0
+vendor.powerhal.init                    u:object_r:power_prop:s0
+vendor.powerhal.rendering               u:object_r:power_prop:s0
+vendor.powerhal.state                   u:object_r:power_prop:s0
 
 # Radio
 sys.fake_bs_flag0                                             u:object_r:system_radio_prop:s0
@@ -45,3 +53,6 @@ persist.audio.dirac.                                          u:object_r:dirac_p
 # Wcnss
 vendor.wlan.driver.ath          u:object_r:wifi_prop:s0
 vendor.wlan.driver.config       u:object_r:wifi_prop:s0
+
+#Wi-Fi
+wifi.active.interface           u:object_r:wifi_prop:s0
