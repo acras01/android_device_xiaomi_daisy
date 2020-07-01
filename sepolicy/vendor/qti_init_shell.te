@@ -35,3 +35,7 @@ allow qti_init_shell vfat:dir { open read };
 allow qti_init_shell vfat:file { getattr open read };
 
 allow qti_init_shell proc_boot_reason:file { getattr open read };
+
+#allow configuring slub debug options
+allow qti_init_shell sysfs_slab_zshandle_storeuser:file w_file_perms;
+allow qti_init_shell sysfs_slab_zspage_storeuser:file w_file_perms;

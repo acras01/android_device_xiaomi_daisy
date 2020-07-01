@@ -29,3 +29,7 @@ type debugfs_rmt, debugfs_type, fs_type;
 
 # Touchscreen
 type proc_touchpanel, fs_type, sysfs_type, proc_type;
+
+# slub-debug
+type sysfs_slab_zshandle_storeuser, fs_type, sysfs_type;
+type sysfs_slab_zspage_storeuser, fs_type, sysfs_type;
