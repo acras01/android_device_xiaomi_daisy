@@ -47,10 +47,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Build FP to be picked by both system and vendor
 BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200605.001/6392402:user/release-keys"
 
-# Use Gcam and Jelly
-TARGET_USE_GCAM := false
-TARGET_USE_JELLY := true
-
 TARGET_BOOT_ANIMATION_RES := 2280
 
 # Set this flag in build script
@@ -64,3 +60,6 @@ ifeq ($(CURRENT_BUILD_TYPE), gapps)
 endif
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Inherit from MiuiCamera
+$(call inherit-product, vendor/MiuiCamera/config.mk)
