@@ -2,7 +2,6 @@ add_service(hal_fingerprint_default, goodix_fingerprint_vndservice);
 
 allow hal_fingerprint_default binder_device:chr_file { read write };
 
-<<<<<<< HEAD
 allow hal_fingerprint_default device:chr_file { ioctl };
 
 allow hal_fingerprint_default fingerprint_data_file:dir rw_dir_perms;

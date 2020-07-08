@@ -22,9 +22,14 @@ type idc_file, file_type, vendor_file_type;
 type keylayout_file, file_type, vendor_file_type;
 
 # Power HAL
-type debugfs_rpm, debugfs_type, fs_type;
-type sysfs_rpm, sysfs_type, fs_type;
 type debugfs_easel, debugfs_type, fs_type;
+type debugfs_rpm, debugfs_type, fs_type;
+type debugfs_wlan, debugfs_type, fs_type;
+type debugfs_sched_features, debugfs_type, fs_type;
+type sysfs_rpm, sysfs_type, fs_type;
+type sysfs_msm_subsys, sysfs_type, fs_type;
+type sysfs_power_stats, sysfs_type, fs_type;
+type proc_sched_energy_aware, proc_type, fs_type;
 
 # Rild
 type rild_file, file_type, vendor_file_type;
@@ -37,14 +42,6 @@ type thermal_data_file, file_type, data_file_type;
 
 # Touchscreen
 type proc_touchpanel, fs_type, sysfs_type, proc_type;
-
-# Power
-type sysfs_msm_subsys, sysfs_type, fs_type;
-type debugfs_rpm, debugfs_type, fs_type;
-type sysfs_power_stats, sysfs_type, fs_type;
-type proc_sched_energy_aware, proc_type, fs_type;
-type debugfs_wlan, debugfs_type, fs_type;
-type debugfs_sched_features, debugfs_type, fs_type;
 
 # slub-debug
 type sysfs_slab_zshandle_storeuser, fs_type, sysfs_type;
