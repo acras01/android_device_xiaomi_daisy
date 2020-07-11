@@ -214,8 +214,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-	vendor.display.config@1.9 \
-	vendor.display.config@1.9_vendor \
+    vendor.display.config@1.9 \
+    vendor.display.config@1.9_vendor \
     copybit.msm8953 \
     gralloc.msm8953 \
     hwcomposer.msm8953 \
@@ -230,7 +230,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     phh_Doze \
     XiaomiParts
-	
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/me.phh.treble.app.xml:system/etc/permissions/me.phh.treble.app.xml
 
@@ -290,7 +290,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
-	
+
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/ft5435_ts.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/ft5435_ts.kl \
