@@ -229,8 +229,8 @@ on boot
     chmod 0660 /proc/touchpanel/wakeup_gesture
 
 # HAL3
-on boot
-    setprop persist.vendor.camera.HAL3.enabled 1
+#on boot
+#    setprop persist.vendor.camera.HAL3.enabled 1
 	
 service ppd /vendor/bin/mm-pp-dpps
     class late_start
