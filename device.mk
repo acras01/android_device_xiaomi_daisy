@@ -405,7 +405,9 @@ PRODUCT_PACKAGES += \
     init.daisy.rc \
     move_time_data.sh \
     move_wifi_data.sh \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.camera.rc \
+    init.camera.sh
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
