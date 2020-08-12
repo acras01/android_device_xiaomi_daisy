@@ -28,21 +28,13 @@ import android.os.SELinux;
 import android.util.Log;
 import android.widget.Toast;
 import android.text.TextUtils;
-/* import com.xiaomi.parts.preferences.LedBlinkPreference;
-import com.xiaomi.parts.preferences.VibratorStrengthPreference;
-import com.xiaomi.parts.preferences.VibratorCallStrengthPreference;
-import com.xiaomi.parts.preferences.VibratorNotifStrengthPreference;
-import com.xiaomi.parts.preferences.YellowFlashPreference;  */
 
 import com.xiaomi.parts.R;
-
-import com.xiaomi.parts.kcal.Utils;
-import com.xiaomi.parts.ambient.SensorsDozeService;
 
 import java.io.IOException;
 import java.util.List;
 
-public class BootReceiver extends BroadcastReceiver implements Utils {
+public class BootReceiver extends BroadcastReceiver {
 
     private static final String PREF_SELINUX_MODE = "selinux_mode";
 
@@ -54,129 +46,51 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
     public void onReceive(Context context, Intent intent) {
 
     mContext = context;
-    ActivityManager activityManager =
-            (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-    List<ActivityManager.RunningAppProcessInfo> procInfos =
-            activityManager.getRunningAppProcesses();
-    for(int i = 0; i < procInfos.size(); i++) {
-        if(procInfos.get(i).processName.equals("com.google.android.setupwizard")) {
-            mSetupRunning = true;
+        ActivityManager activityManager =
+                (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> procInfos =
+                activityManager.getRunningAppProcesses();
+        for(int i = 0; i < procInfos.size(); i++) {
+            if(procInfos.get(i).processName.equals("com.google.android.setupwizard")) {
+                mSetupRunning = true;
+            }
         }
-    }
 
-    if(!mSetupRunning) {
-        try {
-            settingsContext = context.createPackageContext("com.android.settings", 0);
-        } catch (Exception e) {
-            Log.e(TAG, "Package not found", e);
-        }
-        SharedPreferences sharedpreferences = context.getSharedPreferences("selinux_pref",
-                Context.MODE_PRIVATE);
-        if (sharedpreferences.contains(PREF_SELINUX_MODE)) {
-            boolean currentIsSelinuxEnforcing = SELinux.isSELinuxEnforced();
-            boolean isSelinuxEnforcing =
-                    sharedpreferences.getBoolean(PREF_SELINUX_MODE,
-                            currentIsSelinuxEnforcing);
-            if (isSelinuxEnforcing) {
-                if (!currentIsSelinuxEnforcing) {
-                    try {
-                        SuShell.runWithSuCheck("setenforce 1");
-                        showToast(context.getString(R.string.selinux_enforcing_toast_title),
-                                context);
-                    } catch (SuShell.SuDeniedException e) {
+        if(!mSetupRunning) {
+            try {
+                settingsContext = context.createPackageContext("com.android.settings", 0);
+            } catch (Exception e) {
+                Log.e(TAG, "Package not found", e);
+            }
+            SharedPreferences sharedpreferences = context.getSharedPreferences("selinux_pref",
+                    Context.MODE_PRIVATE);
+            if (sharedpreferences.contains(PREF_SELINUX_MODE)) {
+                boolean currentIsSelinuxEnforcing = SELinux.isSELinuxEnforced();
+                boolean isSelinuxEnforcing =sharedpreferences.getBoolean(PREF_SELINUX_MODE,currentIsSelinuxEnforcing);
+                if (isSelinuxEnforcing) {
+                    if (!currentIsSelinuxEnforcing) {
+                        try {
+                            SuShell.runWithSuCheck("setenforce 1");
+                            showToast(context.getString(R.string.selinux_enforcing_toast_title),context);
+                        } catch (SuShell.SuDeniedException e) {
                         showToast(context.getString(R.string.cannot_get_su), context);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
-                }
-            } else {
-                if (currentIsSelinuxEnforcing) {
-                    try {
-                        SuShell.runWithSuCheck("setenforce 0");
-                        showToast(context.getString(R.string.selinux_permissive_toast_title),
-                                context);
-                    } catch (SuShell.SuDeniedException e) {
-                        showToast(context.getString(R.string.cannot_get_su), context);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                } else {
+                    if (currentIsSelinuxEnforcing) {
+                        try {
+                            SuShell.runWithSuCheck("setenforce 0");
+                            showToast(context.getString(R.string.selinux_permissive_toast_title),context);
+                        } catch (SuShell.SuDeniedException e) {
+                            showToast(context.getString(R.string.cannot_get_su), context);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
-        }
-    }
-
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-
-        FileUtils.setValue(DeviceSettings.BACKLIGHT_DIMMER_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_BACKLIGHT_DIMMER, 0));
-
-        if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
-            FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_ENABLED, 0));
-
-            String rgbValue = Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_RED, RED_DEFAULT) + " " +
-                    Settings.Secure.getInt(context.getContentResolver(), PREF_GREEN,
-                            GREEN_DEFAULT) + " " +
-                    Settings.Secure.getInt(context.getContentResolver(), PREF_BLUE,
-                            BLUE_DEFAULT);
-
-            FileUtils.setValue(KCAL_RGB, rgbValue);
-            FileUtils.setValue(KCAL_MIN, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_MINIMUM, MINIMUM_DEFAULT));
-            FileUtils.setValue(KCAL_SAT, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_GRAYSCALE, 0) == 1 ? 128 :
-                    Settings.Secure.getInt(context.getContentResolver(),
-                            PREF_SATURATION, SATURATION_DEFAULT) + SATURATION_OFFSET);
-            FileUtils.setValue(KCAL_VAL, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_VALUE, VALUE_DEFAULT) + VALUE_OFFSET);
-            FileUtils.setValue(KCAL_CONT, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_CONTRAST, CONTRAST_DEFAULT) + CONTRAST_OFFSET);
-            FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
-                    PREF_HUE, HUE_DEFAULT));
-            /* LedBlinkPreference.restore(context);
-            VibratorStrengthPreference.restore(context);
-	    VibratorCallStrengthPreference.restore(context);
-	    VibratorNotifStrengthPreference.restore(context);
-            YellowFlashPreference.restore(context); */
-        }
-
-        /* FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
-                Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.KEY_WHITE_TORCH_BRIGHTNESS, 100));
-        FileUtils.setValue(DeviceSettings.TORCH_2_BRIGHTNESS_PATH,
-                Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.KEY_YELLOW_TORCH_BRIGHTNESS, 100)); */
-        FileUtils.setValue(DeviceSettings.MSM_THERMAL_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PERF_MSM_THERMAL, 0));
-        FileUtils.setValue(DeviceSettings.CORE_CONTROL_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PERF_CORE_CONTROL, 0));
-        FileUtils.setValue(DeviceSettings.VDD_RESTRICTION_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PERF_VDD_RESTRICTION, 0));
-        int gain = Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_HEADPHONE_GAIN, 4);
-        FileUtils.setValue(DeviceSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
-        FileUtils.setValue(DeviceSettings.MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_MICROPHONE_GAIN, 0));
-        FileUtils.setValue(DeviceSettings.EARPIECE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_EARPIECE_GAIN, 0));
-        FileUtils.setValue(DeviceSettings.SPEAKER_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_SPEAKER_GAIN, 0));
-        FileUtils.setValue(DeviceSettings.HIGH_AUDIO_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.HIGH_PERF_AUDIO, 0));
-        FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_USB_FASTCHARGE, 0));
-        FileUtils.setValue(DeviceSettings.MSM_TOUCHBOOST_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_MSM_TOUCHBOOST, 0));
-        // Dirac
-        context.startService(new Intent(context, DiracService.class));
-
-       // Ambient
-        context.startService(new Intent(context, SensorsDozeService.class));
-
-        boolean enabled = sharedPrefs.getBoolean(DeviceSettings.PREF_KEY_FPS_INFO, false);
-        if (enabled) {
-            context.startService(new Intent(context, FPSInfoService.class));
         }
     }
 
