@@ -13,7 +13,6 @@ ro.boot.fpsensor                                              u:object_r:fingerp
 sys.fp.goodix					u:object_r:fingerprint_prop:s0
 sys.fp.vendor					u:object_r:fingerprint_prop:s0
 
-
 # Mlipay
 persist.vendor.sys.pay.ifaa                                   u:object_r:ifaa_prop:s0
 persist.sys.ifaa                    u:object_r:ifaa_prop:s0

@@ -18,6 +18,9 @@ genfscon sysfs /devices/soc/soc:qcom,memlat-cpu0                u:object_r:sysfs
 genfscon sysfs /devices/soc/soc:qcom,memlat-cpu4                u:object_r:sysfs_devfreq:s0
 genfscon debugfs /wlan0                               u:object_r:debugfs_wlan:s0
 genfscon debugfs /sched_features                      u:object_r:debugfs_sched_features:s0
+genfscon debugfs /mnh_sm                              u:object_r:debugfs_easel:s0
+genfscon debugfs /rpm_stats                           u:object_r:debugfs_rpm:s0
+genfscon sysfs /devices/platform/soc/soc:qcom,cpubw                      u:object_r:sysfs_devfreq:s0
 
 # Rmt
 genfscon debugfs /rmt_storage	u:object_r:debugfs_rmt:s0
