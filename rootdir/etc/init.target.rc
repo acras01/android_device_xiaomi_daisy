@@ -127,16 +127,6 @@ service vendor.qseecomd /vendor/bin/qseecomd
    group root
    writepid /dev/cpuset/system-background/tasks
 
-service thermal-engine /system/vendor/bin/thermal-engine
-   class main
-   user root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
-   socket thermal-send-rule stream 0660 system system
-   group root
-   writepid /dev/cpuset/system-background/tasks
-
 service adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media
@@ -202,7 +192,6 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     start vendor.hvdcp_opti
     start vendor.power_off_alarm
-    start thermal-engine
 
 on boot
     # Update cpusets on boot and we want better load balancing
@@ -249,3 +238,6 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
+
+on late-init
+   setprop vendor.thermal.config thermal_info_config.json
