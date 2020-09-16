@@ -46,6 +46,7 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service\.widevine					u:object_r:hal_drm_widevine_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.daisy					u:object_r:hal_light_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock					u:object_r:hal_power_stats_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@2\.0-service\.xiaomi             u:object_r:hal_thermal_default_exec:s0
 
 # Input Devices
 /(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0

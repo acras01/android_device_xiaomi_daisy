@@ -47,6 +47,7 @@ sys.listeners.registered                                      u:object_r:vendor_
 # Thermal engine
 persist.sys.thermal.                                          u:object_r:thermal_engine_prop:s0
 sys.thermal.                                                  u:object_r:thermal_engine_prop:s0
+vendor.thermal.config                                         u:object_r:vendor_thermal_prop:s0
 
 # Dirac
 persist.audio.dirac.                                          u:object_r:dirac_prop:s0
