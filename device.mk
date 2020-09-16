@@ -22,7 +22,7 @@ $(call inherit-product, vendor/google-customization/config.mk)
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    device/xiaomi/daisy
+    $(LOCAL_PATH)
 
 # Set boot SPL
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
