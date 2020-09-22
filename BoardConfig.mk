@@ -220,6 +220,9 @@ TARGET_QCOM_MEDIA_VARIANT := caf-msm8996
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
+# Releasetools firmware
+ADD_RADIO_FILES := true
+
 # RIL
 DISABLE_RILD_OEM_HOOK := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
