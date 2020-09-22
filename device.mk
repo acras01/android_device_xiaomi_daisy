@@ -495,9 +495,11 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
-# VNDK-SP
+# VNDK
 PRODUCT_PACKAGES += \
-    vndk-sp
+    libicuuc.vendor \
+    libstdc++.vendor \
+    vndk_package
 
 # Whitelisted apps
 PRODUCT_COPY_FILES += \
