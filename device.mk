@@ -208,7 +208,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.postproc@1.0 \
     Snap \
-    libdng_sdk.vendor
+    libdng_sdk.vendor \
+    android.hardware.camera.device@3.4
 
 # Consumerir
 PRODUCT_PACKAGES += \
