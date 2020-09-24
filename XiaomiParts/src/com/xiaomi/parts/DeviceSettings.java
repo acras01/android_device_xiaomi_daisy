@@ -43,7 +43,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String TAG = "XiaomiParts";
 
-	public static final String PREF_CAMERA = "camera";
+    public static final String PREF_CAMERA = "camera";
     public static final String CAMERA_SYSTEM_PROPERTY = "persist.camera.profile";
 
     private static final String SELINUX_CATEGORY = "selinux";
@@ -72,9 +72,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mSelinuxPersistence =(SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
         mSelinuxPersistence.setOnPreferenceChangeListener(this);
-        mSelinuxPersistence.setChecked(getContext()
-									   .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
-									   .contains(PREF_SELINUX_MODE));
+        mSelinuxPersistence.setChecked(prefs.getBoolean(PREF_SELINUX_PERSISTENCE, false));
 
         // HAL3|HAL1 Switch button profiles
         mCamera = (SecureSettingListPreference) findPreference(PREF_CAMERA);
@@ -93,36 +91,14 @@ public class DeviceSettings extends PreferenceFragment implements
                	mCamera.setSummary(mCamera.getEntry());
                 FileUtils.setStringProp(CAMERA_SYSTEM_PROPERTY, (String) value);
                 break;
-
             case PREF_SELINUX_MODE:
-                  if (preference == mSelinuxMode) {
-                  boolean enabled = (Boolean) value;
-                  new SwitchSelinuxTask(getActivity()).execute(enabled);
-                  setSelinuxEnabled(enabled, mSelinuxPersistence.isChecked());
-                  return true;
-                } else if (preference == mSelinuxPersistence) {
-                  setSelinuxEnabled(mSelinuxMode.isChecked(), (Boolean) value);
-                  return true;
-                }
+                new SwitchSelinuxTask(getActivity()).execute((Boolean) value);
                 break;
-
             default:
                 break;
         }
         return true;
     }
-
-        private void setSelinuxEnabled(boolean status, boolean persistent) {
-          SharedPreferences.Editor editor = getContext()
-              .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE).edit();
-          if (persistent) {
-            editor.putBoolean(PREF_SELINUX_MODE, status);
-          } else {
-            editor.remove(PREF_SELINUX_MODE);
-          }
-          editor.apply();
-          mSelinuxMode.setChecked(status);
-        }
 
         private class SwitchSelinuxTask extends SuTask<Boolean> {
           public SwitchSelinuxTask(Context context) {
@@ -146,7 +122,7 @@ public class DeviceSettings extends PreferenceFragment implements
             super.onPostExecute(result);
             if (!result) {
               // Did not work, so restore actual value
-              setSelinuxEnabled(SELinux.isSELinuxEnforced(), mSelinuxPersistence.isChecked());
+              mSelinuxMode.setChecked(!mSelinuxMode.isChecked());
             }
           }
         }
