@@ -16,7 +16,6 @@
 
 #define LOG_TAG "android.hardware.power@1.3-service.daisy-libperfmgr"
 
-
 #include <fcntl.h>
 #include <poll.h>
 #include <sys/eventfd.h>
@@ -33,7 +32,7 @@
 #define MSINSEC 1000L
 #define USINMS 1000000L
 
-static const std::vector<std::string> fb_idle_patch = {"/sys/class/graphics/fb0/idle_state"};
+static const std::vector<std::string> fb_idle_path = {"/sys/class/graphics/fb0/idle_state"};
 
 InteractionHandler::InteractionHandler(std::shared_ptr<HintManager> const &hint_manager)
     : mState(INTERACTION_STATE_UNINITIALIZED),
@@ -49,7 +48,7 @@ InteractionHandler::~InteractionHandler() {
 
 static int fb_idle_open(void) {
     int fd;
-    for (auto &path : fb_idle_patch) {
+    for (auto &path : fb_idle_path) {
         fd = open(path.c_str(), O_RDONLY);
         if (fd >= 0)
             return fd;
