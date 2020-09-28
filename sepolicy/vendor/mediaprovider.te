@@ -1,2 +1,4 @@
 allow mediaprovider boottime_prop:file read;
 allow mediaprovider mnt_media_rw_file:dir getattr;
+dontaudit mediaprovider hal_perf_hwservice:hwservice_manager find;
+binder_call(mediaprovider, hal_perf_default)

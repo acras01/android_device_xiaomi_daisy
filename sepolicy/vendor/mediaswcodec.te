@@ -1,1 +1,1 @@
-allow mediaswcodec servicemanager:binder call;
+binder_call(mediaswcodec, servicemanager)
