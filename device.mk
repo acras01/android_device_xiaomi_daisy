@@ -264,7 +264,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint feature
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.2-service.xiaomi_sm6150
+    android.hardware.biometrics.fingerprint@2.2-service.xiaomi
 
 # FM
 PRODUCT_PACKAGES += \
