@@ -39,7 +39,6 @@
 # Goodix Fingerprint
 /dev/goodix_fp					u:object_r:gx_fpd_device:s0
 /data/gf_data(/.*)?                             u:object_r:gx_fpd_data_file:s0
-/persist/data/gxfp(/.*)?			u:object_r:gx_fpd_data_file:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.2-service\.clearkey					u:object_r:hal_drm_clearkey_exec:s0
