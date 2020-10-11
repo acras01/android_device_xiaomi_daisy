@@ -66,6 +66,13 @@ BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 # APEX image
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
+# API Override
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /vendor/bin/mm-qcamera-daemon=27 \
+    /system/vendor/bin/mm-qcamera-daemon=27 \
+    /vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so=27 \
+    /vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so=27
+
 #Audio
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
