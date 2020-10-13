@@ -237,7 +237,9 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libqdMetaData.system \
     libgenlock \
-    libtinyxml
+    libtinyxml \
+    libjson \
+    libjson.vendor
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
