@@ -507,6 +507,8 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service
 
 # VNDK
+PRODUCT_EXTRA_VNDK_VERSIONS := 29
+
 PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
