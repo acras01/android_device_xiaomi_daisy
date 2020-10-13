@@ -49,16 +49,6 @@ BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200705.002/6506677:user/release
 
 TARGET_BOOT_ANIMATION_RES := 2280
 
-# Set this flag in build script
-ifeq ($(CURRENT_BUILD_TYPE), gapps)
-# Use Gapps
-  TARGET_SHIPS_SEPERATE_GAPPS_BUILD := true
-  WITH_GAPPS := true
-  TARGET_GAPPS_ARCH := arm64
-  IS_PHONE := true
-  #TARGET_INCLUDE_WIFI_EXT := true
-endif
-
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Inherit from MiuiCamera
