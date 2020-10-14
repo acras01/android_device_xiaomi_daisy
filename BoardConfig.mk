@@ -121,7 +121,7 @@ USE_XML_AUDIO_POLICY_CONF := 1
 TARGET_BOOTLOADER_BOARD_NAME := MSM8953
 TARGET_BOOTLOADER_BOARD_NAME := daisy
 TARGET_NO_BOOTLOADER := true
-TARGET_BOARD_INFO_FILE := device/xiaomi/daisy/board-info.txt
+#TARGET_BOARD_INFO_FILE := device/xiaomi/daisy/board-info.txt
 
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
