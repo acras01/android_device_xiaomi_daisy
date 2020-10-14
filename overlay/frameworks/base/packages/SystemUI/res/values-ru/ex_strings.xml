@@ -88,7 +88,7 @@
     <string name="quick_settings_hwkeys_label">Аппаратные кнопки</string>
     <!-- Heads up snooze toast -->
     <string name="heads_up_snooze_message_one_minute"><xliff:g id="string">%s</xliff:g> - Всплывающие уведомления выключены на 1 минуту.</string>
-    <string name="heads_up_snooze_message"><xliff:g id="string">%s</xliff:g> - Всплывающие уведомления выключены на <xliff:g id="number">%d</xliff:g> минут/ы.</string>
+    <string name="heads_up_snooze_message"><xliff:g id="string">%1$s</xliff:g> - Всплывающие уведомления выключены на <xliff:g id="number">%2$d</xliff:g> минут(ы).</string>
     <!-- Theme tile -->
     <string name="systemui_theme_style_title">Стиль интерфейса</string>
     <string name="systemui_theme_style_auto">Авто</string>
@@ -210,7 +210,7 @@
     <string name="quick_settings_compass_W">З</string>
     <string name="quick_settings_compass_NW">СЗ</string>
     <!-- Ambient Display Pixel-Like string -->
-    <string name="ambientmusic_songinfo">%s: %s</string>
+    <string name="ambientmusic_songinfo">%1$s от %2$s</string>
     <string name="recents_free_ram">Свободно ОЗУ: %1$d Мб</string>
     <!-- accessibility label for button to open running apps prefscreen [CHAR LIMIT=NONE] -->
     <string name="accessibility_quick_settings_running_services">Открыть запущенные службы.</string>
