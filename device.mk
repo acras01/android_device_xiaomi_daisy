@@ -331,6 +331,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.daisy
 
 # Media
+PRODUCT_PACKAGES += \
+    libavservices_minijail_vendor
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/configs/media_profiles_8953.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles.xml \
