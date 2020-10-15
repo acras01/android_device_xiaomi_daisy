@@ -100,7 +100,18 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     system \
-    vendor
+    vendor \
+    modem \
+    sbl1 \
+    rpm \
+    tz \
+    devcfg \
+    dsp \
+    aboot \
+    cmnlib \
+    cmnlib64 \
+    keymaster \
+    mdtp
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
