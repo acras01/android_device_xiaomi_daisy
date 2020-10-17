@@ -36,16 +36,6 @@ on early-init
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
 
-on fs
-
-    # debug boot process
-    rm /cache/boot_lc_full.txt
-    rm /cache/boot_lc_crash.txt
-    rm /cache/boot_lc_kernel.txt
-    start boot_lc
-    start boot_lc_kernel
-    start boot_lc_crash
-
 on init
     # ZRAM setup
     write /sys/block/zram0/comp_algorithm lz4
@@ -228,8 +218,13 @@ on boot
 on post-fs-data
 
     # Clear existing log and start the service
-    rm /cache/boot_log.txt
-    start logger
+    # debug boot process
+    rm /cache/boot_lc_full.txt
+    rm /cache/boot_lc_crash.txt
+    rm /cache/boot_lc_kernel.txt
+    start boot_lc
+    start boot_lc_kernel
+    start boot_lc_crash
 
     mkdir /data/vendor/misc 01771 system system
 
@@ -594,7 +589,6 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
 on property:sys.boot_completed=1
  
    # Stop the logger service
-    stop logger
     stop boot_lc
     stop boot_lc_crash
     stop boot_lc_kernel
@@ -666,13 +660,6 @@ on property:dev.bootcomplete=1
     stop boot_lc
     stop boot_lc_crash
     stop boot_lc_kernel
-
-service logger /system/bin/logcat -b all -D -f /cache/boot_log.txt
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
 
 service boot_lc /system/bin/logcat -b all -D -f /cache/boot_lc_full.txt
     class main
