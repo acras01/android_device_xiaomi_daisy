@@ -4,7 +4,8 @@
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
 dalvik.vm.dex2oat-filter=speed \
-dalvik.vm.image-dex2oat-filter=speed
+dalvik.vm.image-dex2oat-filter=speed \
+ro.dalvik.vm.native.bridge=0
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -196,6 +197,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.qti.core_ctl_min_cpu=2 \
 ro.vendor.qti.core_ctl_max_cpu=4
 
+# Data modules
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.radio.prefer_spn=1 \
+persist.vendor.data.profile_update=true
+
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 debug.egl.hw=0 \
@@ -223,14 +229,12 @@ vendor.display.disable_skip_validate=1 \
 vendor.gralloc.enable_fb_ubwc=1 \
 debug.composition.type=skiavk \
 debug.hwui.renderer=skiavk \
+ro.vendor.display.sensortype=2 \
 persist.vendor.max.brightness=475
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.dpm.feature=1
-
-# DRM
-PRODUCT_PROPERTY_OVERRIDES += \
+persist.dpm.feature=1 \
 drm.service.enabled=true
 
 # Fingerprint
@@ -296,7 +300,13 @@ vendor.vidc.dec.downscalar_width=1920 \
 vendor.vidc.disable.split.mode=1 \
 vendor.vidc.enc.disable.pq=true \
 vendor.vidc.enc.disable_bframes=1 \
-vendor.video.disable.ubwc=1
+vendor.video.disable.ubwc=1 \
+persist.mm.sta.enable=0
+
+# Memperf properties
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.memperf.lib=libmemperf.so \
+ro.memperf.enable=false
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -319,7 +329,10 @@ vendor.iop.enable_prefetch_ofr=1 \
 vendor.perf.iop_v3.enable=1 \
 ro.vendor.gt_library=libqti-gt.so \
 ro.vendor.at_library=libqti-at.so \
-persist.vendor.qti.games.gt.prof=1
+persist.vendor.qti.games.gt.prof=1 \
+ro.vendor.qti.am.reschedule_service=true \
+ro.vendor.qti.sys.fw.bservice_age=5000 \
+ro.vendor.qti.sys.fw.bservice_limit=5
 
 # Netflix
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -387,6 +400,10 @@ telephony.lteOnCdmaDevice=1 \
 persist.vendor.radio.data_con_rprt=1 \
 persist.sys.fflag.override.settings_network_and_internet_v2=true
 
+# SD Card
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.fuse_sdcard=true
+
 # SurfaceFlinger
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.surface_flinger.protected_contents=true \
@@ -412,6 +429,14 @@ persist.delta_time.enable=true
 PRODUCT_PROPERTY_OVERRIDES += \
 net.tcp.2g_init_rwnd=10
 
+# Trim properties
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.vendor.qti.sys.fw.empty_app_percent=50 \
+ro.vendor.qti.sys.fw.trim_cache_percent=100 \
+ro.vendor.qti.sys.fw.trim_empty_percent=100 \
+ro.vendor.qti.sys.fw.trim_enable_memory=2147483648 \
+ro.vendor.qti.sys.fw.use_trim_settings=true
+
 # UI
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.use_fifo_ui=0
@@ -432,23 +457,4 @@ persist.sys.wfd.virtual=0
 # Unsorted properties
 PRODUCT_PROPERTY_OVERRIDES += \
 keyguard.no_require_sim=true \
-persist.backup.ntpServer=0.pool.ntp.org \
-persist.fuse_sdcard=true \
-persist.mm.sta.enable=0 \
-persist.vendor.audio.speaker.prot.enable=false \
-persist.vendor.data.profile_update=true \
-persist.vendor.radio.prefer_spn=1 \
-ro.dalvik.vm.native.bridge=0 \
-ro.memperf.lib=libmemperf.so \
-ro.memperf.enable=false \
-ro.vendor.display.sensortype=2 \
-ro.vendor.qti.am.reschedule_service=true \
-ro.vendor.qti.sys.fw.bservice_age=5000 \
-ro.vendor.qti.sys.fw.bservice_limit=5 \
-ro.vendor.qti.sys.fw.empty_app_percent=50 \
-ro.vendor.qti.sys.fw.trim_cache_percent=100 \
-ro.vendor.qti.sys.fw.trim_empty_percent=100 \
-ro.vendor.qti.sys.fw.trim_enable_memory=2147483648 \
-ro.vendor.qti.sys.fw.use_trim_settings=true \
-sys.vendor.shutdown.waittime=500 \
-vendor.audio.offload.passthrough=false
+persist.backup.ntpServer=0.pool.ntp.org
