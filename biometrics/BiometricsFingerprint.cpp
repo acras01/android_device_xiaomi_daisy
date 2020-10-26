@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2017 The Android Open Source Project
- * Copyright (C) 2018-2020 The LineageOS Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,8 +14,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.2-service.xiaomi"
 
+#include <hardware/hw_auth_token.h>
+
+#include <hardware/hardware.h>
+#include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
+
+#include <cutils/properties.h>
+#include <inttypes.h>
+#include <unistd.h>
 
 namespace android {
 namespace hardware {
@@ -205,9 +214,11 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
 
 void setFpVendorProp(const char *fp_vendor) {
     property_set("persist.vendor.sys.fp.vendor", fp_vendor);
+    property_set("ro.boot.fpsensor", fp_vendor);
 }
 
-fingerprint_device_t* getDeviceForVendor(const char *class_name) {
+fingerprint_device_t* getDeviceForVendor(const char *class_name)
+{
     const hw_module_t *hw_module = nullptr;
     int err;
 
@@ -250,17 +261,23 @@ fingerprint_device_t* getDeviceForVendor(const char *class_name) {
     return fp_device;
 }
 
-fingerprint_device_t* getFingerprintDevice() {
+fingerprint_device_t* getFingerprintDevice()
+{
     fingerprint_device_t *fp_device;
-    std::string vendor_modules[] = { "fpc", "fpc_fod", "goodix", "goodix_fod", "syna" };
 
-    for (const auto& vendor : vendor_modules) {
-        if ((fp_device = getDeviceForVendor(vendor.c_str())) == nullptr) {
-            ALOGE("Failed to load %s fingerprint module", vendor.c_str());
-            continue;
-        }
+    fp_device = getDeviceForVendor("fpc");
+    if (fp_device == nullptr) {
+        ALOGE("Failed to load fpc fingerprint module");
+    } else {
+        setFpVendorProp("fpc");
+        return fp_device;
+    }
 
-        setFpVendorProp(vendor.c_str());
+    fp_device = getDeviceForVendor("goodix");
+    if (fp_device == nullptr) {
+        ALOGE("Failed to load goodix fingerprint module");
+    } else {
+        setFpVendorProp("goodix");
         return fp_device;
     }
 
@@ -380,11 +397,7 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
     }
 }
 
-Return<int32_t> BiometricsFingerprint::extCmd(int32_t cmd, int32_t param) {
-    return mDevice->extCmd(mDevice, cmd, param);
-}
-
-}  // namespace implementation
+} // namespace implementation
 }  // namespace V2_1
 }  // namespace fingerprint
 }  // namespace biometrics
