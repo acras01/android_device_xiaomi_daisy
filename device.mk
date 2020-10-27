@@ -430,6 +430,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson
 
+# QTI Perf
+PRODUCT_PACKAGES += \
+   libtflite \
+   libtextclassifier_hash
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
