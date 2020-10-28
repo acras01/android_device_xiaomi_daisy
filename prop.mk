@@ -4,6 +4,7 @@
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.dalvik.vm.native.bridge=0 \
+dalvik.vm.dex2oat64.enabled=true \
 ro.vendor.qti.am.reschedule_service=true \
 ro.sys.fw.dex2oat_thread_count=8 \
 dalvik.vm.boot-dex2oat-threads=8 \
