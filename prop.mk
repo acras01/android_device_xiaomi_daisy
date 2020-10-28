@@ -152,6 +152,12 @@ persist.bt.enableAptXHD=true \
 persist.service.btui.use_aptx=1 \
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-ldac
 
+#Blur
+PRODUCT_PRODUCT_PROPERTIES += \
+ro.sf.blurs_are_expensive=1 \
+ro.surface_flinger.supports_background_blur=1 \
+debug.sf.disable_backpressure=1
+
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.vendor.shutdown.waittime=500
