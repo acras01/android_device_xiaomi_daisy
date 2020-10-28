@@ -1,1 +1,0 @@
-allow dpmd same_process_hal_file:file { execute getattr open read };

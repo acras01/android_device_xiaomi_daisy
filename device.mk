@@ -345,6 +345,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.daisy
 
+# MatLog app
+PRODUCT_PACKAGES += \
+    MatLog
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail_vendor

@@ -20,8 +20,8 @@ allow system_server same_process_hal_file:file { getattr open read };
 
 allow system_server adb_data_file:file { getattr open read };
 
-# Allow system_server to set persist_camera_prop
-get_prop(system_server, persist_camera_prop)
+# Allow system_server to set vendor_persist_camera_prop
+get_prop(system_server, vendor_persist_camera_prop)
 
 # fingerprint
 allow system_server goodix_fp_hwservice:hwservice_manager find;
