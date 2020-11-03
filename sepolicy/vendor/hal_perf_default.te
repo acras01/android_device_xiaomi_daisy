@@ -1,3 +1,6 @@
 allow hal_perf_default property_socket:sock_file { write };
 allow hal_perf_default sysfs_kgsl_proc:file r_file_perms;
 allow hal_perf_default sysfs_kgsl_proc:dir search;
+allow hal_perf_default init:unix_stream_socket connectto;
+
+binder_call(hal_perf_default, hal_graphics_composer_default)

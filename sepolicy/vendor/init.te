@@ -67,3 +67,4 @@ allow init sysfs_kgsl:file { setattr };
 allow init sysfs_kgsl:lnk_file { read };
 allow init hal_dpmQmiMgr:binder { call transfer };
 allow init diag_device:chr_file { ioctl open read };
+allow init sysfs_mmc_host:file write;

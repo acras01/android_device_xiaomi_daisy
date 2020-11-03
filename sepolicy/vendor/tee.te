@@ -8,3 +8,5 @@ allow tee fingerprintd_data_file:file { getattr read write };
 set_prop(tee, system_prop)
 
 allow tee same_process_hal_file:file { execute getattr open read };
+
+allow tee persist_file:lnk_file read;
