@@ -31,5 +31,8 @@
     <!-- Max visible notification icons -->
     <integer name="config_maxVisibleNotificationIcons">3</integer>
     <integer name="config_maxVisibleNotificationIconsWhenDark">4</integer>
+
+    <!-- The number of columns in the QuickSettings -->
+    <integer name="quick_settings_num_columns">4</integer>
 	
 </resources>
