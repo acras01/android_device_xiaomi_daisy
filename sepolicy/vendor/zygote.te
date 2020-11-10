@@ -1,4 +1,5 @@
 allow zygote self:capability kill;
 allow zygote same_process_hal_file:file { execute getattr open read };
+allow zygote exported_camera_prop:file read;
 
 dontaudit zygote device:file write;
