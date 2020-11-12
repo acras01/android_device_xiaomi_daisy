@@ -168,7 +168,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.bluetooth.a2dp@1.0-service \
-    vendor.qti.hardware.bluetooth_audio@2.0 \
     vendor.qti.hardware.bluetooth_dun@1.0
 
 # Audio configuration
@@ -195,7 +194,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libbtconfigstore \
     libbluetooth_qti \
-    libbthost_if
+    libbthost_if \
+    bt_did.conf \
+    bt_stack.conf
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -386,7 +387,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     android.system.net.netd@1.0 \
-    libandroid_net
+    libandroid_net \
+    libnetfilter_conntrack \
+    libnfnetlink
 
 # OMX
 PRODUCT_PACKAGES += \
@@ -581,7 +584,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifi.supplicant@2.1 \
     vendor.qti.hardware.wifi.supplicant@2.2 \
     WifiOverlay \
-    TetherOverlay
+    TetherOverlay \
+    wcnss_service
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
