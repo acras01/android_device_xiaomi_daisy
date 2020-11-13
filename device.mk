@@ -143,13 +143,18 @@ PRODUCT_PACKAGES += \
     update_engine_client
 
 # Audio
+
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
     android.hardware.audio.service \
+    android.hardware.audio@6.0 \
+    android.hardware.audio.common@6.0 \
+    android.hardware.audio.common@6.0-util \
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0 \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.2-impl \
-    audio.r_submix.default \
+	audio.r_submix.default \
     audio.usb.default \
     libaudioroute \
     libaacwrapper \
@@ -169,6 +174,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.bluetooth.a2dp@1.0-service \
     vendor.qti.hardware.bluetooth_dun@1.0
+
+#Audio Specific device overlays
+DEVICE_PACKAGE_OVERLAYS += hardware/qcom-caf/msm8996/audio/configs/common/overlay
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
