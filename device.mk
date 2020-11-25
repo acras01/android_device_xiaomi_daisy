@@ -581,7 +581,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf \
     WifiOverlay \
-    TetherOverlay
+    TetherOverlay \
+    wcnss_service \
+    libwifi-hal-ctrl \
+    libwifi-hal-qcom
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/hostapd.accept:$(TARGET_COPY_OUT_SYSTEM)/etc/hostapd/hostapd.accept \
