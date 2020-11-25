@@ -468,6 +468,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 persist.debug.wfd.enable=1 \
 persist.sys.wfd.virtual=0
 
+# Zygote preforking
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+persist.device_config.runtime_native.usap_pool_enabled=true
+
 # ZRAM
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.zram.mark_idle_delay_mins=60 \
