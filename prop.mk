@@ -259,6 +259,10 @@ vendor.hw.fm.init=0
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 
+# Graphics
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.hardware.egl=adreno
+
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.gps.qc_nlp_in_use=1 \
