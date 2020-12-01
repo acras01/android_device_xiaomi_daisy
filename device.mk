@@ -243,15 +243,17 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    vendor.display.config@1.9 \
-    vendor.display.config@1.9_vendor \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0_vendor \
     copybit.msm8953 \
     gralloc.msm8953 \
     hwcomposer.msm8953 \
     memtrack.msm8953 \
     libdisplayconfig \
+    libdisplayconfig.vendor \
     liboverlay \
-    libqdMetaData.system \
+    libqdMetaData \
+    libqdMetaData.vendor \
     libgenlock \
     libtinyxml \
     libjson \
