@@ -156,6 +156,10 @@ ro.bluetooth.hfp.ver=1.7 \
 persist.vendor.bt.aac_frm_ctl.enabled=true \
 ro.qualcomm.bt.hci_transport=smd \
 persist.vendor.btstack.enable.splita2dp=false \
+persist.vendor.btsatck.absvolfeature=true \
+persist.vendor.btstack.connect.peer_earbud=true \
+persist.vendor.btstack.enable.twsplus=true \
+persist.vendor.btstack.enable.twsplussho=true \
 persist.bt.enableAptXHD=true \
 persist.service.btui.use_aptx=1 \
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-ldac
@@ -243,8 +247,10 @@ persist.vendor.max.brightness=475
 
 # DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.dpm.feature=1 \
-drm.service.enabled=true
+persist.vendor.dpm.feature=11 \
+persist.vendor.dpm.loglevel=0 \
+persist.vendor.dpm.nsrm.bkg.evt=3955 \
+persist.vendor.dpmhalservice.enable=1
 
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -354,6 +360,8 @@ ro.netflix.bsp_rev=Q660-13149-1
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.vendor.use_data_netmgrd=true \
 persist.data.netmgrd.qos.enable=true \
+persist.vendor.data.mode=concurrent \
+persist.vendor.data.iwlan.enable=true \
 persist.vendor.data.mode=concurrent
 
 # Nitz
