@@ -413,6 +413,7 @@ PRODUCT_PACKAGES += \
     libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
+    libstagefright_enc_common \
     libstagefrighthw \
     libgui_vendor
 
