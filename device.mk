@@ -299,6 +299,11 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# FS
+PRODUCT_PACKAGES += \
+    liboemaids_system \
+    liboemaids_vendor
+
 # Fwk-detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
