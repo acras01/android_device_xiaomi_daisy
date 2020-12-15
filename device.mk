@@ -140,7 +140,6 @@ PRODUCT_PACKAGES += \
     update_engine_client
 
 # Audio
-
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
     android.hardware.audio@6.0 \
@@ -151,7 +150,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.2-impl \
-	audio.r_submix.default \
+    audio.r_submix.default \
     audio.usb.default \
     libaudiopreprocessing \
     libaudioroute \
@@ -221,7 +220,7 @@ PRODUCT_PACKAGES += \
     Snap \
     libdng_sdk.vendor \
     android.hardware.camera.device@3.4
-		
+
 # Component overrides
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
@@ -452,7 +451,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-v29.so \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-v29.so
-	
+
 # Public Libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
