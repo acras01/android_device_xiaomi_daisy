@@ -153,6 +153,7 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl \
 	audio.r_submix.default \
     audio.usb.default \
+    libaudiopreprocessing \
     libaudioroute \
     libaacwrapper \
     libaudio-resampler \
