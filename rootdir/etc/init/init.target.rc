@@ -168,6 +168,11 @@ service wcnss-service /system/vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
+service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
+    class core
+    user root
+    oneshot
+
 on property:init.svc.hwcomposer-2-1=stopped
     stop ppd
 
@@ -182,6 +187,13 @@ service energy-awareness /system/vendor/bin/energy-awareness
     user root
     group system
     oneshot
+
+service vendor.sensors.qti /vendor/bin/sensors.qti
+    class core
+    user system
+    group system
+    disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
