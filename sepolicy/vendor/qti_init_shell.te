@@ -41,3 +41,7 @@ allow qti_init_shell sysfs_slab_zspage_storeuser:file w_file_perms;
 #For configfs permission
 allow qti_init_shell configfs:dir rw_dir_perms;
 allow qti_init_shell configfs:file { rw_file_perms create };
+
+allow qti_init_shell persist_file:lnk_file read;
+
+set_prop(qti_init_shell, default_prop)
