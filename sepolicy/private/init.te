@@ -1,4 +1,4 @@
-allow init system_file:file execute_no_trans;
-allow init servicemanager:binder { call transfer };
+#allow init system_file:file execute_no_trans;
+#allow init servicemanager:binder { call transfer };
 allow init self:netlink_route_socket { create nlmsg_read write };
-allow init vendor_perf_service:service_manager { add find };
+#allow init vendor_perf_service:service_manager { add find };

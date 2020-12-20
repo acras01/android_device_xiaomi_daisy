@@ -44,4 +44,4 @@ allow qti_init_shell configfs:file { rw_file_perms create };
 
 allow qti_init_shell persist_file:lnk_file read;
 
-set_prop(qti_init_shell, default_prop)
+#set_prop(qti_init_shell, default_prop)
