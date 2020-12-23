@@ -165,12 +165,14 @@ PRODUCT_PACKAGES += \
 # A2DP
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0 \
     android.hardware.bluetooth.audio@2.0-impl \
-    android.hardware.bluetooth.a2dp@1.0-impl \
-    android.hardware.bluetooth.a2dp@1.0-service \
+    com.qualcomm.qti.bluetooth_audio@1.0 \
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.0 \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.bluetooth_dun@1.0 \
+    vendor.qti.hardware.bluetooth_dun@1.0.vendor \
     libbluetooth_audio_session
 
 #Audio Specific device overlays
@@ -198,12 +200,12 @@ PRODUCT_COPY_FILES += \
 
 # BT
 PRODUCT_PACKAGES += \
-    libbtconfigstore \
-    libbluetooth_qti \
-    libbthost_if \
-    bt_configstore \
     bt_did.conf \
-    bt_stack.conf
+    bt_stack.conf \
+    vendor.qti.hardware.btconfigstore@1.0 \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0 \
+    vendor.qti.hardware.btconfigstore@2.0.vendor \
 
 # Camera
 PRODUCT_PACKAGES += \
