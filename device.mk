@@ -417,7 +417,9 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefright_enc_common \
     libstagefrighthw \
-    libgui_vendor
+    libgui_vendor \
+    vendor.qti.hardware.capabilityconfigstore@1.0 \
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 # Perf
 PRODUCT_BOOT_JARS += \
