@@ -365,6 +365,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor \
     libavservices_minijail_vendor
 
 PRODUCT_COPY_FILES += \
