@@ -52,4 +52,4 @@ TARGET_BOOT_ANIMATION_RES := 2280
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Inherit from MiuiCamera
-$(call inherit-product, vendor/MiuiCamera/config.mk)
+#$(call inherit-product, vendor/MiuiCamera/config.mk)
