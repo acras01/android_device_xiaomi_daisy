@@ -495,7 +495,6 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2 \
     librmnetctl \
     libcnefeatureconfig \
-    libxml2 \
     qti-telephony-common \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
