@@ -35,15 +35,6 @@
         android:supportsRtl="true"
         android:theme="@style/CustomOptionsTheme">
 
-        <receiver
-            android:name=".BootReceiver">
-            <intent-filter android:priority="100" >
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
-            </intent-filter>
-        </receiver>
-
         <activity
             android:name=".DeviceSettingsActivity"
             android:exported="false"
@@ -70,9 +61,9 @@
                 android:resource="@string/advanced_settings_summary" />
         </activity>
 
-		<service android:name=".StartAction" />
+	<service android:name=".StartAction" />
 
-		<service
+	<service
             android:name=".CameraTileService"
             android:icon="@drawable/ic_cam_qs"
             android:label="@string/camera_title"
