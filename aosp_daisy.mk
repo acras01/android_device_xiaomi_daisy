@@ -52,7 +52,5 @@ BUILD_FINGERPRINT := "google/coral/coral:11/RQ1A.201205.008/6943376:user/release
 
 TARGET_BOOT_ANIMATION_RES := 2280
 
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
 # Use MiuiCamera
 WITH_MIUICAM := true

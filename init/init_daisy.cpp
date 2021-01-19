@@ -57,4 +57,7 @@ void vendor_load_properties()
     // fingerprint
     property_override("ro.build.description", "coral-user 11 RQ1A.201205.008 6943376 release-keys");
     property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:11/RQ1A.201205.008/6943376:user/release-keys");
+    // Misc
+    property_override("ro.com.google.clientidbase", "android-xiaomi");
+    property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rev1");
 }
