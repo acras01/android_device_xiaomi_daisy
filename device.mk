@@ -235,7 +235,9 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     vendor.display.config@1.12 \
+    vendor.display.config@1.12.vendor \
     vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor \
     vendor.qti.hardware.display.allocator@1.0 \
     vendor.qti.hardware.display.allocator@3.0 \
     vendor.qti.hardware.display.composer@1.0 \
