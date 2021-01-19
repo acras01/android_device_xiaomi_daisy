@@ -24,6 +24,9 @@ $(call inherit-product, device/xiaomi/daisy/device.mk)
 # Inherit some common AEX stuff.
 $(call inherit-product, vendor/aosp/common.mk)
 
+# Inherit some prebuilts
+$(call inherit-product, vendor/custom/prebuilts/config.mk) 
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := daisy
 PRODUCT_NAME := aosp_daisy
