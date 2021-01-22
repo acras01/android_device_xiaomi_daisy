@@ -7,6 +7,9 @@ persist.vendor.btstack.enable.twsplussho=true
 persist.vendor.bt.aac_frm_ctl.enabled=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 
+# Blur
+persist.sys.sf.disable_blurs=1
+
 # Cne
 persist.vendor.cne.feature=1
 
