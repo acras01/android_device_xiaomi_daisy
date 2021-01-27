@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 The Asus-SDM660 Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="advanced_settings">Xiaomi Parts</string>
+    <string name="advanced_settings_summary">Додаткові налагодження пристрою</string>
+
+    <!-- HAL3 | HAL1 Switch button profiles -->
+    <string name="camera_category">Камера</string>
+    <string name="camera_explanation_summary">Перемикання режимів HAL3 | HAL1 </string>
+    <string name="camera_title">Режим роботи камери</string>
+    <string name="camera_hal1_summary">HAL1</string>
+    <string name="camera_hal3_summary">HAL3</string>
+    <string name="camera_dialogTitle">Оберіть режим роботи камери</string>
+
+</resources>
