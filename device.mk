@@ -297,11 +297,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     qcom.fmradio
 
-# FS
-PRODUCT_PACKAGES += \
-    liboemaids_system \
-    liboemaids_vendor
-
 # Fwk-detect
 PRODUCT_PACKAGES += \
     libqti_vndfwk_detect \
