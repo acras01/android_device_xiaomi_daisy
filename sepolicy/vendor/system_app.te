@@ -18,3 +18,4 @@ allow system_app sysfs_kgsl:lnk_file read;
 allow system_app fm_prop:property_service set;
 
 hal_client_domain(system_app, hal_mlipay)
+hal_client_domain(system_app, vendor_hal_fm)
