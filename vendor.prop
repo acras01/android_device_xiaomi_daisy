@@ -167,7 +167,6 @@ debug.enable.sglscale=1
 debug.gralloc.enable_fb_ubwc=1
 debug.mdpcomp.logs=0
 dev.pm.dyn_samplingrate=1
-debug.sf.disable_backpressure=1
 persist.hwc.mdpcomp.enable=true
 ro.opengles.version=196610
 ro.qualcomm.cabl=0
@@ -327,16 +326,6 @@ persist.fuse_sdcard=true
 
 # SurfaceFlinger
 ro.sf.lcd_density=420
-debug.sf.enable_hwc_vds=1
-debug.sf.hw=0
-debug.sf.recomputecrop=0
-debug.sf.use_phase_offsets_as_durations=1
-debug.sf.late.sf.duration=10500000
-debug.sf.late.app.duration=20500000
-debug.sf.early.sf.duration=21000000
-debug.sf.early.app.duration=16500000
-debug.sf.earlyGl.sf.duration=13500000
-debug.sf.earlyGl.app.duration=21000000
 
 # Thermal configs path
 sys.thermal.data.path=/data/vendor/thermal/
