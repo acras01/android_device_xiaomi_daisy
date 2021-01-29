@@ -20,7 +20,7 @@ persist.vendor.data.profile_update=true
 # Graphics
 persist.demo.hdmirotationlock=false
 persist.hwc.enable_vds=1
-debug.sf.latch_unsignaled=0
+debug.sf.latch_unsignaled=1
 
 # Media
 media.stagefright.audio.sink=280
