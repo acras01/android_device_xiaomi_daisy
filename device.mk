@@ -411,6 +411,10 @@ PRODUCT_PACKAGES += \
     libgui_vendor
 
 # Perf
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf@1.0.vendor \
+    vendor.qti.hardware.perf@2.2.vendor
+
 PRODUCT_BOOT_JARS += \
     QPerformance \
     UxPerformance
