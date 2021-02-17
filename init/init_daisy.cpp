@@ -55,8 +55,8 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
 void vendor_load_properties()
 {
     // fingerprint
-    property_override("ro.build.description", "coral-user 11 RQ1A.210105.003 7005429 release-keys");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:11/RQ1A.210105.003/7005429:user/release-keys__2021-01-05");
+    property_override("ro.build.description", "coral-user 11 RQ1A.210205.004 7038034 release-keys");
+    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "google/coral/coral:11/RQ1A.210205.004/7038034:user/release-keys__2021-02-05");
     // Misc
     property_override("ro.com.google.clientidbase", "android-xiaomi");
     property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rev1");
