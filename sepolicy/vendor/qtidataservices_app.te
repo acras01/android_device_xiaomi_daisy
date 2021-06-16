@@ -1,6 +1,9 @@
 allow qtidataservices_app hal_perf_hwservice:hwservice_manager find;
 binder_call(qtidataservices_app, hal_perf_default)
-allow qtidataservices_app self:socket { read write };
+
+allow qtidataservices_app self:socket { create read write };
+allow qtidataservices_app system_app_data_file:dir create_dir_perms;
+allow qtidataservices_app system_app_data_file:file create_file_perms;
 
 get_prop(qtidataservices_app, vendor_mwqem_prop)
 allow qtidataservices_app hal_mwqemadapter_hwservice:hwservice_manager find;
