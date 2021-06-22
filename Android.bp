@@ -2,5 +2,5 @@ subdirs = [
     "*",
 ]
 soong_namespace {
-    imports: ["hardware/qcom/bootctrl", "hardware/xiaomi"],
+    imports: ["hardware/qcom/bootctrl"],
 }

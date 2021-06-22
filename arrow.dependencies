@@ -8,10 +8,6 @@
     "target_path": "vendor/xiaomi/daisy"
   },
   {
-    "repository": "android_hardware_xiaomi",
-    "target_path": "hardware/xiaomi"
-  },
-  {
     "remote": "github",
     "repository": "acras01/treble_app",
     "target_path": "vendor/phh_Doze",
