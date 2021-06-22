@@ -264,8 +264,6 @@ fingerprint_device_t* getDeviceForVendor(const char *class_name)
 fingerprint_device_t* getFingerprintDevice() {
     fingerprint_device_t *fp_device;
 
-    setFpVendorProp("none");
-
     const char *vendor[2] = {"fpc", "goodix"};
     for (int i = 0; i < 2; i++) {
         fp_device = getDeviceForVendor(vendor[i]);
@@ -277,6 +275,7 @@ fingerprint_device_t* getFingerprintDevice() {
         }
     }
 
+    setFpVendorProp("none");
     return nullptr;
 }
 
