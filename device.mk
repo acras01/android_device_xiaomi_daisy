@@ -508,7 +508,8 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml \
     telephony-ext \
-    ims-ext-common_system
+    ims-ext-common_system \
+    CarrierConfigOverlay
 
 PRODUCT_BOOT_JARS += \
     telephony-ext \
